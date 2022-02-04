@@ -1,10 +1,10 @@
 from tkinter import *
 import math
 # ---------------------------- CONSTANTS ------------------------------- #
-PINK = "#e2979c"
-RED = "#e7305b"
-GREEN = "#9bdeac"
-YELLOW = "#f7f5dd"
+ORANGE = "#F0B67F"
+RED = "#E23428"
+GREEN = "#75BBA7"
+BLUE = "#6C809A"
 FONT_NAME = "Courier"
 WORK_MIN = 25
 SHORT_BREAK_MIN = 5
@@ -42,7 +42,7 @@ def start_time(count_value=False):
         title_label.config(text='Work', fg=GREEN)
         count_value = WORK_MIN
     else:
-        title_label.config(text='Short Break', fg=PINK)
+        title_label.config(text='Short Break', fg=ORANGE)
         count_value = SHORT_BREAK_MIN
     count_down(count_value * 60)
 
@@ -78,18 +78,18 @@ def add_mark():
 # ---------------------------- UI SETUP ------------------------------- #
 root = Tk()
 root.title('Pomodoro')
-root.config(padx=40, pady=40, bg=YELLOW)
+root.config(padx=40, pady=40, bg=BLUE)
 
-canvas = Canvas(width=300, height=250, highlightthickness=0, bg=YELLOW)
+canvas = Canvas(width=300, height=250, highlightthickness=0, bg=BLUE)
 tomato = PhotoImage(file='tomato.png')
 canvas.create_image(150, 120, image=tomato)
-timer_txt = canvas.create_text(150, 140, text="00:00", fill='white', font=(FONT_NAME, 35, 'bold'))
+timer_txt = canvas.create_text(150, 140, text="00:00", fill=BLUE, font=(FONT_NAME, 35, 'bold'))
 canvas.grid(row=1, column=1)
 
-title_label = Label(text="Timer", bg=YELLOW,  anchor='s', font=(FONT_NAME, 35, 'bold'), fg=GREEN)
+title_label = Label(text="Timer", bg=BLUE, anchor='s', font=(FONT_NAME, 35, 'bold'), fg=GREEN)
 title_label.grid(row=0, column=1)
 
-check_marks_label = Label(anchor='n', bg=YELLOW, font=(FONT_NAME, 12, 'bold'), fg=GREEN)
+check_marks_label = Label(anchor='n', bg=BLUE, font=(FONT_NAME, 12, 'bold'), fg=GREEN)
 check_marks_label.grid(row=2, column=1)
 
 start_button = Button(text='Start', font=(FONT_NAME, 12, 'bold'), bg=GREEN, fg=RED, command=start_time)
