@@ -70,7 +70,7 @@ def count_down(count):
 
 
 def add_mark():
-    current_txt = check_marks_label.cget('text')
+    current_txt = check_marks_label.get('text')
     current_txt += CHECK_MARK
     check_marks_label.config(text=current_txt)
 
